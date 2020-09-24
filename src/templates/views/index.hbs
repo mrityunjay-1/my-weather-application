@@ -23,7 +23,7 @@
             document.getElementById("temperature").innerHTML = "Loading...";
             
             async function getDetails(place) {
-                const response = await fetch(`http://localhost:8080/weather/${place}`);
+                const response = await fetch(`/weather/${place}`);
                 const data = await response.json();
                 return data;
             }
