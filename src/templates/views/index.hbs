@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    
+    <form id="form1">
+        <input type="text" id="place1"/>
+        <input type="submit" />
+    </form>    
+
+    <p id="temperature"></p>
+
+<script>
+    document.addEventListener("DOMContentLoaded", init);
+    function init(){
+        let x = document.getElementById("form1");
+        x.addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+            let place = document.getElementById("place1").value;
+            
+            document.getElementById("temperature").innerHTML = "Loading...";
+            
+            async function getDetails(place) {
+                const response = await fetch(`http://localhost:8080/weather/${place}`);
+                const data = await response.json();
+                return data;
+            }
+            getDetails(place)
+                .then(data => {
+                    document.getElementById("temperature").innerHTML = data.data;
+                    console.log(data.data);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        })
+    }
+</script>
+</body>
+</html>
