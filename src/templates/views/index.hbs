@@ -1,49 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title> Weather-app | Mrityunjay Kumar </title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="IE-8" />
-<style>
-    html{
-        font-size: 62.5%;
-    }
-    *{
-        margin: 0;
-        padding: 0; 
-        box-sizing: border-box;
-        font-family: 'helvetica';
-    }
-    .main_div{
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-        align-items: center;
-        justify-content: center;
-        background-image: linear-gradient(to top right, blue, cyan);
-        flex-direction: column;
-    }
-    .main_div div{
-        width: 35%;
-    }
-    .main_div_child1{
-        padding: 2rem 1rem 1rem 0rem;
-    }
-</style>
+    <link  rel="stylesheet" href="css/css_for_indexhbs.css" />
 </head>
 <body>
 
 <div class="main_div">
-    <div> <h1 style="color: white; font-size: 3rem;"> Please Enter Your location down below </h1> </div>
-    <div class="main_div_child1"> 
-        <form id="form1">
-                <input type="text" id="place1" style="font-size: 2rem;outline: none; border: 1px solid black; padding: 0.8rem;"/>
-                <input type="submit" style="border: 1px solid white; font-size: 2rem;  padding: 0.8rem; background-color: green; color: white;"/>
-        </form>    
-
-        
+    <div class="main_div_child1">
+        <h1 class="heading1"> Please Enter Your location down below </h1>
     </div>
-    <div style="color: white;">
+
+    <div class="main_div_child2"> 
+        <form id="form1">
+            <div class="inside_form">
+                <div class="insode_form_child1">
+                    <input type="text" id="place1" />
+                </div>
+                <div class="insode_form_child2">
+                    <input type="submit" class="submit_button" value="Search"/>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div  class="main_div_child3">
         <p style="font-size: 1.5rem; padding: 1rem 0rem ;"> Results for : <span id="place"></span>  </p><hr />
         <p id="temperature" style="font-size: 2rem; padding: 1rem 0rem;"></p>
     </div>
