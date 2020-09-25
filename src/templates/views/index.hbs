@@ -8,6 +8,8 @@
 </head>
 <body>
 
+{{>loader}}
+
 <div class="main_div">
     <div class="main_div_child1">
         <h1 class="heading1"> Please Enter Your location down below </h1>
@@ -25,9 +27,14 @@
             </div>
         </form>
     </div>
-    <div  class="main_div_child3">
-        <p style="font-size: 1.5rem; padding: 1rem 0rem ;"> Results for : <span id="place"></span>  </p><hr />
-        <p id="temperature" style="font-size: 2rem; padding: 1rem 0rem;"></p>
+    <div style="border: 2px solid white; padding: 1rem;" class="main_div_child3">
+        <p style="font-size: 1.5rem; padding: 1rem 0rem ;"> Results for : <span id="place"> </span>  </p><hr />
+        <p style="font-size: 2rem; padding: 1rem 0rem;"> Temperature:  <span id="temperature">  </span> </p>
+        <p style="font-size: 2rem; padding: 1rem 0rem;"> Rain Possibility:  <span id="rain">  </span> </p>
+        <p style="font-size: 2rem; padding: 1rem 0rem;"> Humidity:  <span id="humidity">  </span> </p>
+        <p style="font-size: 2rem; padding: 1rem 0rem;"> Wind Speed:  <span id="windspeed"> </span></p>
+        <p style="font-size: 2rem; padding: 1rem 0rem;"> Wind Direction:  <span id="winddir">  </span> </p><br />
+        <p style="font-size: 2rem; padding: 1rem 0rem;"> Last Observation Time:  <span id="updatetime">  </span> </p>
     </div>
 </div>
 <script>
@@ -39,18 +46,24 @@
             
             let place = document.getElementById("place1").value;
             
-            document.getElementById("temperature").innerHTML = "Loading...";
+            document.getElementById("loader").style.display = "flex";
             
             async function getDetails(place) {
                 const response = await fetch(`/weather/${place}`);
                 const data = await response.json();
+                console.log(data);
                 return data;
             }
             getDetails(place)
                 .then(data => {
-                    document.getElementById("temperature").innerHTML = data.data;
                     document.getElementById("place").innerHTML = data.place;
-                    console.log(data.data);
+                    document.getElementById("temperature").innerHTML = data.realforecastdata.current.temperature;
+                    document.getElementById("rain").innerHTML = data.realforecastdata.current.precip;
+                    document.getElementById("humidity").innerHTML = data.realforecastdata.current.humidity;
+                    document.getElementById("windspeed").innerHTML = data.realforecastdata.current.wind_speed + " miles/Hour";
+                    document.getElementById("winddir").innerHTML = data.realforecastdata.current.wind_dir;
+                    document.getElementById("updatetime").innerHTML = data.realforecastdata.current.observation_time;
+                    document.getElementById("loader").style.display = "none";
                 })
                 .catch(error => {
                     console.log(error);

@@ -34,11 +34,10 @@ server1.get('/weather/:place', (req, res) => {
             }
             const temp = `Temperature = ${forecastdata.body.current.temperature} F and there is ${forecastdata.body.current.cloudcover} % chance of rain.`;
             
-    
             res.status(200).send({
-                data: temp,
-                place: geocodingdata.place_name
-            });
+                    realforecastdata: forecastdata.body,
+                    place: geocodingdata.place_name
+                });
         })
     })
 })
