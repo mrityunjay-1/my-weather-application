@@ -13,12 +13,15 @@ const geocoding = (place, callback) => {
         if(response.body.features.length == 0){
             return callback('Sorry Place not recognized', null);
         }
+        //console.log(response.body);
         
         const coordinates = {
             latitude: response.body.features[0].center[0],
             longitude: response.body.features[0].center[1],
             place_name: response.body.features[0].place_name
         }
+        console.log(coordinates);
+        
         
         callback(null, coordinates);
     })

@@ -13,8 +13,9 @@ server1.set('view engine', 'hbs');
 server1.set('views', path.join(__dirname, '/templates/views'));
 hbs.registerPartials(path.join(__dirname, '/templates/partials') );
 
-
-
+server1.get('/', (req, res) => {
+    res.render('index');
+})
 
 server1.get('/weather', (req, res) => {
     res.render('index');
@@ -23,21 +24,22 @@ server1.get('/weather/:place', (req, res) => {
     
     let place = req.params.place;
 
-    geocoding(place, (error, data) => {
+    geocoding(place, (error, geocodingdata) => {
         if(error){
             return res.status(500).send({message: 'some error ocurred'});
         }
-        forecast(data.latitude, data.longitude, (error, forecastdata) => {
+        forecast(geocodingdata.latitude, geocodingdata.longitude, (error, forecastdata) => {
             if(error){
                 return res.status(500).send({error: 'something went wrong'});
             }
-            const temp = `temperature = ${forecastdata.body.current.temperature} F and there is ${forecastdata.body.current.cloudcover} % chance of rain.`;
+            const temp = `Temperature = ${forecastdata.body.current.temperature} F and there is ${forecastdata.body.current.cloudcover} % chance of rain.`;
             
     
             res.status(200).send({
-                data: temp
+                data: temp,
+                place: geocodingdata.place_name
             });
-        })  
+        })
     })
 })
 
