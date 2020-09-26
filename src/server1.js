@@ -42,6 +42,10 @@ server1.get('/weather/:place', (req, res) => {
     })
 })
 
+server1.get('/scrollbar' , (req, res) => {
+    res.render('scrollbar');
+})
+
 server1.listen(port, () =>{
     console.log('Server is up at port:' + port);
 })
