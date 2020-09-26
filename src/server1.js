@@ -5,7 +5,7 @@ const hbs = require('hbs');
 const {geocoding, forecast} =  require('./weather-app-modules/geocoding');
 
 const server1 = express();
-const port  = process.env.PORT || 8080;
+const port  =  process.env.PORT || 8080;
 
 server1.use(express.static(path.join(__dirname, '../public')));
 server1.set('view engine', 'hbs');

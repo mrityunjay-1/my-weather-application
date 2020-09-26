@@ -57,8 +57,8 @@
             getDetails(place)
                 .then(data => {
                     document.getElementById("place").innerHTML = data.place;
-                    document.getElementById("temperature").innerHTML = data.realforecastdata.current.temperature;
-                    document.getElementById("rain").innerHTML = data.realforecastdata.current.precip;
+                    document.getElementById("temperature").innerHTML = data.realforecastdata.current.temperature + " F";
+                    document.getElementById("rain").innerHTML = data.realforecastdata.current.precip + " %";
                     document.getElementById("humidity").innerHTML = data.realforecastdata.current.humidity;
                     document.getElementById("windspeed").innerHTML = data.realforecastdata.current.wind_speed + " miles/Hour";
                     document.getElementById("winddir").innerHTML = data.realforecastdata.current.wind_dir;
