@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "27bd5d16526243d79d2dbe4892c65c9be1f0697b611385506013dcd32ead82a9"
+build_start_time: [1690945157, 667236000]
+build_end_time: [1690945157, 727409000]
+inputs:
+  "/Users/mrityunjay/XCodeProjects/weathery/weathery/AppDelegate.swift": !dirty [1690773901, 624286180]
+  "/Users/mrityunjay/XCodeProjects/weathery/weathery/Controllers/WeatherViewController.swift": !dirty [1690903163, 216810775]
+  "/Users/mrityunjay/XCodeProjects/weathery/weathery/Models/WeatherManager.swift": !dirty [1690903704, 356189257]
+  "/Users/mrityunjay/XCodeProjects/weathery/weathery/SceneDelegate.swift": !dirty [1690773901, 628561926]

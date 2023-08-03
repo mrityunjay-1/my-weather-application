@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+weathery in weathery, no dependencies
+weatheryTests in weathery, depends on:
+weathery in weathery (explicit)
+weatheryUITests in weathery, depends on:
+weathery in weathery (explicit)

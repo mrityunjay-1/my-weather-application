@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "cdbbc2dee898c8d45300c0afc2b63c6766612ffb5a75755466f222f86cb9eded"
+build_start_time: [1690775074, 688246000]
+build_end_time: [1690775074, 772363000]
+inputs:
+  "/Users/mrityunjay/XCodeProjects/weathery/weathery/AppDelegate.swift": !private [1690773901, 624286180]
+  "/Users/mrityunjay/XCodeProjects/weathery/weathery/SceneDelegate.swift": !private [1690773901, 628561926]
+  "/Users/mrityunjay/XCodeProjects/weathery/weathery/ViewController.swift": !private [1690773901, 629737800]

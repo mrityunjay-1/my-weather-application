@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="weathery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weatherImages" highlightedImage="weatherImages" translatesAutoresizingMaskIntoConstraints="NO" id="4PP-AO-PCj">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hrl-Ra-2Ta">
+                                <rect key="frame" x="0.0" y="58" width="430" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rDK-Dz-1nv">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="I5K-Tq-6aK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aI0-qM-xkZ">
+                                        <rect key="frame" x="58" y="0.0" width="314.33333333333331" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8z-KW-PZb">
+                                        <rect key="frame" x="380.33333333333331" y="0.0" width="49.666666666666686" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="magnifyingglass.circle.fill" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ziw-R9-9b4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aI0-qM-xkZ" firstAttribute="top" secondItem="Hrl-Ra-2Ta" secondAttribute="top" id="JOv-2o-2C3"/>
+                                    <constraint firstAttribute="bottom" secondItem="aI0-qM-xkZ" secondAttribute="bottom" id="Ufh-qK-XzH"/>
+                                    <constraint firstItem="aI0-qM-xkZ" firstAttribute="leading" secondItem="rDK-Dz-1nv" secondAttribute="trailing" constant="8" id="lu9-m2-k1M"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cloud.rain" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="v4u-WW-FHr">
+                                <rect key="frame" x="224" y="146" width="190" height="146.00000000000006"/>
+                                <color key="tintColor" name="weatherIcon"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemFillColor"/>
+                        <constraints>
+                            <constraint firstItem="Hrl-Ra-2Ta" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3hA-WN-RxG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v4u-WW-FHr" secondAttribute="trailing" constant="16" id="8fH-xH-WTv"/>
+                            <constraint firstAttribute="bottom" secondItem="4PP-AO-PCj" secondAttribute="bottom" id="MWL-CJ-WM5"/>
+                            <constraint firstItem="v4u-WW-FHr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="224" id="QTl-fM-bPe"/>
+                            <constraint firstItem="4PP-AO-PCj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="URA-8U-u0H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v4u-WW-FHr" secondAttribute="bottom" constant="546.66999999999996" id="aLE-Qy-tZh"/>
+                            <constraint firstItem="Hrl-Ra-2Ta" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="58" id="dZC-Kq-QrO"/>
+                            <constraint firstItem="v4u-WW-FHr" firstAttribute="top" secondItem="Hrl-Ra-2Ta" secondAttribute="bottom" constant="48.329999999999998" id="goL-03-bpL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4PP-AO-PCj" secondAttribute="trailing" id="kPd-sh-hT9"/>
+                            <constraint firstItem="Hrl-Ra-2Ta" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lIf-jr-kfb"/>
+                            <constraint firstItem="Hrl-Ra-2Ta" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tw7-rf-s9Y"/>
+                            <constraint firstItem="v4u-WW-FHr" firstAttribute="top" secondItem="Hrl-Ra-2Ta" secondAttribute="bottom" constant="48.329999999999998" id="vNa-2o-Psm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hrl-Ra-2Ta" secondAttribute="trailing" id="vYe-xw-d2j"/>
+                            <constraint firstItem="4PP-AO-PCj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zaW-xp-Wv7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="aI0-qM-xkZ" id="wkv-NK-x37"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.186046511627907" y="-34.763948497854081"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cloud.rain" catalog="system" width="126" height="128"/>
+        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="sun.max" catalog="system" width="128" height="125"/>
+        <image name="weatherImages" width="836" height="661"/>
+        <namedColor name="weatherIcon">
+            <color red="0.14900000393390656" green="0.25900000333786011" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
